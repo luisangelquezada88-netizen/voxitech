@@ -1,9 +1,9 @@
 dictionary:
   id: genero_familia_en_v1
-  version: "1.0.0"
+  version: "1.1.0"
   language: en
   project_id: trump_gender_2025_2026
-  description: "Diccionario temático inicial para detección léxica de género, familia, sexualidad, cuerpo, feminismo, religión, nación y adversarios políticos."
+  description: "Diccionario temático actualizado con términos observados en fuentes oficiales de la Casa Blanca (segundo mandato de Donald Trump, 2025-2026). Basado en Presidential Actions, Fact Sheets y Proclamations verificadas."
   match_mode: exact
   case_sensitive: false
   whole_word: true
@@ -12,27 +12,37 @@ themes:
   - id: genero_y_sexo
     label: "Género y sexo"
     terms:
-      - woman
-      - women
-      - man
-      - men
+      - sex
+      - sexes
       - male
       - female
-      - sex
+      - men
+      - women
+      - boys
+      - girls
       - gender
+      - biological truth
+      - biological reality
+      - two sexes
+      - immutable biological classification
     exclusion_terms: []
 
   - id: mujer_hombre_ninas_ninos
     label: "Mujer, hombre, niñas y niños"
     terms:
-      - girl
-      - girls
+      - woman
+      - women
+      - man
+      - men
       - boy
       - boys
+      - girl
+      - girls
       - daughter
       - daughters
       - son
       - sons
+    exclusion_terms: []
 
   - id: familia_y_parentalidad
     label: "Familia, padres, maternidad y paternidad"
@@ -48,6 +58,7 @@ themes:
       - maternity
       - paternity
       - parenthood
+    exclusion_terms: []
 
   - id: infancia_y_proteccion
     label: "Infancia y protección"
@@ -57,6 +68,8 @@ themes:
       - childhood
       - protection
       - protect
+      - Title IX
+    exclusion_terms: []
 
   - id: sexualidad_y_orientacion
     label: "Sexualidad y orientación sexual"
@@ -66,14 +79,15 @@ themes:
       - heterosexual
       - homosexual
       - orientation
+    exclusion_terms: []
 
   - id: identidad_de_genero
     label: "Identidad de género"
     terms:
-      - transgender
-      - trans
       - gender identity
+      - gender identities
       - cisgender
+    exclusion_terms: []
 
   - id: personas_trans
     label: "Personas trans y términos asociados"
@@ -81,7 +95,10 @@ themes:
       - transgender
       - trans woman
       - trans man
+      - trans-identifying
       - gender dysphoria
+      - transgender insanity
+    exclusion_terms: []
 
   - id: cuerpo_y_reproduccion
     label: "Cuerpo, reproducción, embarazo, deportes y espacios separados"
@@ -94,9 +111,16 @@ themes:
       - reproductive
       - sports
       - sports teams
+      - women's sports
+      - women's sports teams
       - locker rooms
       - bathrooms
+      - single-sex spaces
       - single-sex
+      - sleeping facilities
+      - changing facilities
+      - bathing facilities
+    exclusion_terms: []
 
   - id: feminismo_e_igualdad
     label: "Feminismo, igualdad, equidad y DEI"
@@ -107,8 +131,13 @@ themes:
       - equity
       - equal
       - DEI
+      - DEIA
       - diversity
       - inclusion
+      - merit-based
+      - affirmative action
+      - individual dignity
+    exclusion_terms: []
 
   - id: religion_fe_moralidad
     label: "Religión, fe, moralidad y valores tradicionales"
@@ -116,23 +145,28 @@ themes:
       - religion
       - religious
       - faith
-      - god
+      - God
       - morality
       - moral
       - values
       - traditional
       - tradition
+    exclusion_terms: []
 
   - id: nacion_orden_seguridad
     label: "Nación, orden, seguridad, civilización y declive"
     terms:
       - nation
       - national
+      - American
+      - America
       - order
       - security
       - civilization
       - decline
       - border
+      - sovereignty
+    exclusion_terms: []
 
   - id: adversarios_politicos
     label: "Adversarios políticos: izquierda, woke, demócratas, élites, medios, activistas"
@@ -142,11 +176,17 @@ themes:
       - woke
       - democrat
       - democrats
+      - radical
+      - ideologues
+      - Biden Administration
+      - Biden-Harris Administration
       - elite
       - elites
       - media
       - activist
       - activists
+      - bureaucracy
+    exclusion_terms: []
 
   - id: legitimacion
     label: "Legitimación: biología, sentido común, derechos, libertad, protección, fe, tradición"
@@ -161,7 +201,13 @@ themes:
       - protect
       - tradition
       - faith
+      - safety
+      - fairness
+      - dignity
+      - truth
+    exclusion_terms: []
 
 notas_interpretacion:
   - "Una coincidencia léxica no implica automáticamente significado político o ideológico."
   - "Toda mención debe ser revisada por un investigador antes de codificar."
+  - "Este diccionario está anclado a términos observados en fuentes oficiales reales de la Casa Blanca (2025-2026)."

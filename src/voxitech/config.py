@@ -107,8 +107,57 @@ class ProjectConfig(BaseModel):
     quality: QualityConfig
 
 
+class ProjectFileConfig(BaseModel):
+    """Wrapper para YAMLs que envuelven la configuración bajo la clave 'project'."""
+
+    project: ProjectConfig
+
+
+def _flatten_project_data(data: dict) -> dict:
+    """Aplana la estructura del YAML para que los campos de nivel superior
+    (research, temporal, speaker, sources, etc.) se integren dentro de project.
+
+    El YAML del proyecto tiene esta forma:
+
+        project:
+          id: ...
+          name: ...
+          ...
+        research:
+          ...
+        temporal:
+          ...
+
+    Pero ProjectConfig espera todo en un solo nivel.
+    """
+    project_data = data.get("project", {})
+    if not isinstance(project_data, dict):
+        project_data = {}
+
+    # Campos que viven en la raíz del YAML y deben integrarse en project
+    root_level_fields = [
+        "research", "temporal", "speaker", "sources", "dictionaries",
+        "codebook", "segmentation", "storage", "deduplication", "quality",
+    ]
+
+    for field in root_level_fields:
+        if field in data and field not in project_data:
+            project_data[field] = data[field]
+
+    return project_data
+
+
 def load_project_config(path: str | Path) -> ProjectConfig:
-    """Carga y valida un archivo YAML de configuración de proyecto."""
+    """Carga y valida un archivo YAML de configuración de proyecto.
+
+    El archivo YAML puede tener la estructura anidada bajo la clave ``project``
+    (como en ``config/projects/trump_gender_2025_2026.yaml``) o los campos
+    directamente en la raíz.
+    """
     with open(path, "r", encoding="utf-8") as f:
         data = yaml.safe_load(f)
+
+    if "project" in data and isinstance(data["project"], dict):
+        flat = _flatten_project_data(data)
+        return ProjectConfig.model_validate(flat)
     return ProjectConfig.model_validate(data)

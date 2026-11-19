@@ -1,0 +1,206 @@
+sources:
+  - id: white_house_presidential_actions
+    name: White House Presidential Actions
+    type: website
+    base_url: https://www.whitehouse.gov/presidential-actions
+    document_types:
+      - executive_order
+      - proclamation
+      - presidential_memorandum
+    language: en
+    active: true
+    rate_limit_rps: 1.0
+    respect_robots_txt: true
+    user_agent: "VoxiTech Lab AI research (contacto: investigador@example.com)"
+    selectors: {}
+    notes: "Textos completos disponibles en HTML. Ideal para extracción directa."
+
+  - id: white_house_fact_sheets
+    name: White House Fact Sheets
+    type: website
+    base_url: https://www.whitehouse.gov/fact-sheets
+    document_types:
+      - fact_sheet
+    language: en
+    active: true
+    rate_limit_rps: 1.0
+    respect_robots_txt: true
+    user_agent: "VoxiTech Lab AI research (contacto: investigador@example.com)"
+    selectors: {}
+    notes: "Textos resumidos disponibles en HTML. Útil como contexto de políticas."
+
+  - id: white_house_releases
+    name: White House Releases
+    type: website
+    base_url: https://www.whitehouse.gov/releases
+    document_types:
+      - release
+    language: en
+    active: true
+    rate_limit_rps: 1.0
+    respect_robots_txt: true
+    user_agent: "VoxiTech Lab AI research (contacto: investigador@example.com)"
+    selectors: {}
+    notes: "Comunicados con texto completo disponibles en HTML."
+
+  - id: white_house_briefings_statements
+    name: White House Briefings & Statements (Remarks)
+    type: website
+    base_url: https://www.whitehouse.gov/briefings-statements
+    document_types:
+      - remarks
+      - speech
+      - statement
+    language: en
+    active: false
+    rate_limit_rps: 1.0
+    respect_robots_txt: true
+    user_agent: "VoxiTech Lab AI research (contacto: investigador@example.com)"
+    selectors: {}
+    notes: "Frequentemente solo incrusta video de YouTube sin transcripción visible en HTML. Desactivada por defecto hasta contar con estrategia de transcripción de video o versiones en texto."
+
+documents:
+  - id: wh_eo_2025_01_20_defending_women
+    source_id: white_house_presidential_actions
+    url: https://www.whitehouse.gov/presidential-actions/2025/01/defending-women-from-gender-ideology-extremism-and-restoring-biological-truth-to-the-federal-government/
+    title: "Defending Women From Gender Ideology Extremism And Restoring Biological Truth To The Federal Government"
+    document_type: executive_order
+    date: "2025-01-20"
+    speaker: "Donald J. Trump"
+    speaker_role: "President of the United States"
+    attribution_type: verbatim_speaker
+    primary_theme: genero_y_sexo
+    status: verified
+
+  - id: wh_eo_2025_02_05_keeping_men_out_womens_sports
+    source_id: white_house_presidential_actions
+    url: https://www.whitehouse.gov/presidential-actions/2025/02/keeping-men-out-of-womens-sports/
+    title: "Keeping Men Out of Women's Sports"
+    document_type: executive_order
+    date: "2025-02-05"
+    speaker: "Donald J. Trump"
+    speaker_role: "President of the United States"
+    attribution_type: verbatim_speaker
+    primary_theme: cuerpo_y_reproduccion
+    status: verified
+
+  - id: wh_fs_2025_01_22_ending_illegal_dei
+    source_id: white_house_fact_sheets
+    url: https://www.whitehouse.gov/fact-sheets/2025/01/fact-sheet-president-donald-j-trump-protects-civil-rights-and-merit-based-opportunity-by-ending-illegal-dei/
+    title: "Fact Sheet: President Donald J. Trump Protects Civil Rights and Merit-Based Opportunity by Ending Illegal DEI"
+    document_type: fact_sheet
+    date: "2025-01-22"
+    speaker: "The White House"
+    speaker_role: "Institution"
+    attribution_type: institutional_statement
+    primary_theme: feminismo_e_igualdad
+    status: verified
+
+  - id: wh_fs_2025_01_27_military_excellence
+    source_id: white_house_fact_sheets
+    url: https://www.whitehouse.gov/fact-sheets/2025/01/fact-sheet-president-donald-j-trump-ensures-military-excellence-and-readiness/
+    title: "Fact Sheet: President Donald J. Trump Ensures Military Excellence and Readiness"
+    document_type: fact_sheet
+    date: "2025-01-27"
+    speaker: "The White House"
+    speaker_role: "Institution"
+    attribution_type: institutional_statement
+    primary_theme: sexualidad_y_orientacion
+    status: verified
+
+  - id: wh_eo_2025_01_28_prioritizing_military_excellence
+    source_id: white_house_presidential_actions
+    url: https://www.whitehouse.gov/presidential-actions/2025/01/prioritizing-military-excellence-and-readiness
+    title: "Prioritizing Military Excellence and Readiness"
+    document_type: executive_order
+    date: "2025-01-28"
+    speaker: "Donald J. Trump"
+    speaker_role: "President of the United States"
+    attribution_type: verbatim_speaker
+    primary_theme: sexualidad_y_orientacion
+    status: verified
+
+  - id: wh_eo_2025_01_20_ending_radical_dei
+    source_id: white_house_presidential_actions
+    url: https://www.whitehouse.gov/presidential-actions/2025/01/ending-radical-and-wasteful-government-dei-programs-and-preferencing/
+    title: "Ending Radical And Wasteful Government DEI Programs And Preferencing"
+    document_type: executive_order
+    date: "2025-01-20"
+    speaker: "Donald J. Trump"
+    speaker_role: "President of the United States"
+    attribution_type: verbatim_speaker
+    primary_theme: feminismo_e_igualdad
+    status: verified
+
+  - id: wh_eo_2025_01_21_ending_illegal_discrimination
+    source_id: white_house_presidential_actions
+    url: https://www.whitehouse.gov/presidential-actions/2025/01/ending-illegal-discrimination-and-restoring-merit-based-opportunity
+    title: "Ending Illegal Discrimination And Restoring Merit-Based Opportunity"
+    document_type: executive_order
+    date: "2025-01-21"
+    speaker: "Donald J. Trump"
+    speaker_role: "President of the United States"
+    attribution_type: verbatim_speaker
+    primary_theme: feminismo_e_igualdad
+    status: verified
+
+  - id: wh_fs_2025_03_18_dei_foreign_service
+    source_id: white_house_fact_sheets
+    url: https://www.whitehouse.gov/fact-sheets/2025/03/fact-sheet-president-donald-j-trump-removes-dei-from-the-foreign-service
+    title: "Fact Sheet: President Donald J. Trump Removes DEI From the Foreign Service"
+    document_type: fact_sheet
+    date: "2025-03-18"
+    speaker: "The White House"
+    speaker_role: "Institution"
+    attribution_type: institutional_statement
+    primary_theme: feminismo_e_igualdad
+    status: verified
+
+  - id: wh_proclamation_2025_03_06_womens_history_month
+    source_id: white_house_presidential_actions
+    url: https://www.whitehouse.gov/briefings-statements/2025/03/womens-history-month-2025
+    title: "Women's History Month, 2025"
+    document_type: proclamation
+    date: "2025-03-06"
+    speaker: "Donald J. Trump"
+    speaker_role: "President of the United States"
+    attribution_type: verbatim_speaker
+    primary_theme: genero_y_sexo
+    status: verified
+
+  - id: wh_proclamation_2026_03_12_womens_history_month
+    source_id: white_house_presidential_actions
+    url: https://www.whitehouse.gov/presidential-actions/2026/03/womens-history-month-2026
+    title: "Women's History Month, 2026"
+    document_type: proclamation
+    date: "2026-03-12"
+    speaker: "Donald J. Trump"
+    speaker_role: "President of the United States"
+    attribution_type: verbatim_speaker
+    primary_theme: genero_y_sexo
+    status: verified
+
+  - id: wh_release_2026_06_supreme_court_transgender
+    source_id: white_house_releases
+    url: https://www.whitehouse.gov/releases/2026/06/supreme-court-bolsters-president-trumps-push-to-eliminate-transgender-insanity/
+    title: "Supreme Court Bolsters President Trump’s Push to Eliminate Transgender Insanity"
+    document_type: release
+    date: "2026-06-30"
+    speaker: "The White House"
+    speaker_role: "Institution"
+    attribution_type: institutional_statement
+    primary_theme: sexualidad_y_orientacion
+    status: verified
+
+  - id: wh_remarks_2025_05_08_melania_military_mothers
+    source_id: white_house_briefings_statements
+    url: https://www.whitehouse.gov/briefings-statements/2025/05/first-lady-melania-trump-reflects-on-the-strength-of-motherhood-during-white-house-military-mothers-celebration/
+    title: "First Lady Melania Trump Reflects on the Strength of Motherhood During White House Military Mothers Celebration"
+    document_type: remarks
+    date: "2025-05-08"
+    speaker: "Melania Trump"
+    speaker_role: "First Lady"
+    attribution_type: verbatim_speaker
+    primary_theme: familia_y_parentalidad
+    status: verified
+    note: "Verificar disponibilidad de transcripción en texto; de lo contrario, requiere transcripción de video."
