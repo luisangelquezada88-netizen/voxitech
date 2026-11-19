@@ -1,0 +1,167 @@
+dictionary:
+  id: genero_familia_en_v1
+  version: "1.0.0"
+  language: en
+  project_id: trump_gender_2025_2026
+  description: "Diccionario temático inicial para detección léxica de género, familia, sexualidad, cuerpo, feminismo, religión, nación y adversarios políticos."
+  match_mode: exact
+  case_sensitive: false
+  whole_word: true
+
+themes:
+  - id: genero_y_sexo
+    label: "Género y sexo"
+    terms:
+      - woman
+      - women
+      - man
+      - men
+      - male
+      - female
+      - sex
+      - gender
+    exclusion_terms: []
+
+  - id: mujer_hombre_ninas_ninos
+    label: "Mujer, hombre, niñas y niños"
+    terms:
+      - girl
+      - girls
+      - boy
+      - boys
+      - daughter
+      - daughters
+      - son
+      - sons
+
+  - id: familia_y_parentalidad
+    label: "Familia, padres, maternidad y paternidad"
+    terms:
+      - family
+      - families
+      - father
+      - fathers
+      - mother
+      - mothers
+      - parent
+      - parents
+      - maternity
+      - paternity
+      - parenthood
+
+  - id: infancia_y_proteccion
+    label: "Infancia y protección"
+    terms:
+      - child
+      - children
+      - childhood
+      - protection
+      - protect
+
+  - id: sexualidad_y_orientacion
+    label: "Sexualidad y orientación sexual"
+    terms:
+      - sexuality
+      - sexual
+      - heterosexual
+      - homosexual
+      - orientation
+
+  - id: identidad_de_genero
+    label: "Identidad de género"
+    terms:
+      - transgender
+      - trans
+      - gender identity
+      - cisgender
+
+  - id: personas_trans
+    label: "Personas trans y términos asociados"
+    terms:
+      - transgender
+      - trans woman
+      - trans man
+      - gender dysphoria
+
+  - id: cuerpo_y_reproduccion
+    label: "Cuerpo, reproducción, embarazo, deportes y espacios separados"
+    terms:
+      - body
+      - bodies
+      - pregnancy
+      - pregnant
+      - reproduction
+      - reproductive
+      - sports
+      - sports teams
+      - locker rooms
+      - bathrooms
+      - single-sex
+
+  - id: feminismo_e_igualdad
+    label: "Feminismo, igualdad, equidad y DEI"
+    terms:
+      - feminism
+      - feminist
+      - equality
+      - equity
+      - equal
+      - DEI
+      - diversity
+      - inclusion
+
+  - id: religion_fe_moralidad
+    label: "Religión, fe, moralidad y valores tradicionales"
+    terms:
+      - religion
+      - religious
+      - faith
+      - god
+      - morality
+      - moral
+      - values
+      - traditional
+      - tradition
+
+  - id: nacion_orden_seguridad
+    label: "Nación, orden, seguridad, civilización y declive"
+    terms:
+      - nation
+      - national
+      - order
+      - security
+      - civilization
+      - decline
+      - border
+
+  - id: adversarios_politicos
+    label: "Adversarios políticos: izquierda, woke, demócratas, élites, medios, activistas"
+    terms:
+      - left
+      - leftist
+      - woke
+      - democrat
+      - democrats
+      - elite
+      - elites
+      - media
+      - activist
+      - activists
+
+  - id: legitimacion
+    label: "Legitimación: biología, sentido común, derechos, libertad, protección, fe, tradición"
+    terms:
+      - biology
+      - biological
+      - common sense
+      - rights
+      - freedom
+      - liberty
+      - protection
+      - protect
+      - tradition
+      - faith
+
+notas_interpretacion:
+  - "Una coincidencia léxica no implica automáticamente significado político o ideológico."
+  - "Toda mención debe ser revisada por un investigador antes de codificar."

@@ -1,0 +1,54 @@
+codebook:
+  id: trump_gender_v1
+  version: "1.0.0"
+  language: en
+  project_id: trump_gender_2025_2026
+  author: null
+  status: draft
+  description: "Libro de códigos versión 1 para el proyecto Trump género 2025-2026."
+
+codes:
+  - code: GEN_MUJER
+    level: 1
+    label: "Mujer / categoría femenina"
+    definition: "Referencia a mujeres como categoría social o política."
+    inclusion_criteria: ["Menciona mujer o mujeres como sujeto o objeto de política"]
+    exclusion_criteria: ["Referencia genérica a persona sin especificar género"]
+    examples: []
+    memo: null
+
+  - code: FAM_FAMILIA_TRADICIONAL
+    level: 1
+    label: "Familia tradicional"
+    definition: "Invocación a la familia como unidad madre-padre-hijos."
+    inclusion_criteria: []
+    exclusion_criteria: []
+    examples: []
+    memo: null
+
+  - code: GEN_IDEOLOGIA_GENERO
+    level: 2
+    parent_code: GEN_MUJER
+    label: "Ideología de género (marco opositor)"
+    definition: "Uso del término género como marco antagonista."
+    inclusion_criteria: []
+    exclusion_criteria: []
+    examples: []
+    memo: null
+
+codificación_permitida:
+  - manual
+  - semiautomatica_modelo_sugiere
+  - revision_humana_obligatoria
+
+campos_codigo:
+  - quote_literal
+  - discourse_frame
+  - actors
+  - oppositions
+  - legitimization
+  - interpretation
+  - codificador
+  - fecha
+  - notas
+  - estado_revision

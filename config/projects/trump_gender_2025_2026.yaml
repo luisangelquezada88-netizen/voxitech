@@ -1,0 +1,103 @@
+project:
+  id: trump_gender_2025_2026
+  name: "Discurso de género, familia y sexualidad - Segundo mandato"
+  description: "Análisis discursivo de Donald Trump sobre género, familia, sexualidad, cuerpo y feminismo durante su segundo mandato presidencial (desde 2025-01-20 hasta fecha de corte configurable)."
+  version: "1.0.0"
+  status: active
+  created_at: "2026-11-19"
+
+research:
+  main_question: "¿Cómo construye Donald Trump discursivamente las categorías de género, familia, sexualidad, cuerpo y feminismo, y qué marcos políticos, morales y de identidad moviliza?"
+  themes:
+    - genero_y_sexo
+    - mujer_hombre_ninas_ninos
+    - familia_y_parentalidad
+    - infancia_y_proteccion
+    - sexualidad_y_orientacion
+    - identidad_de_genero
+    - personas_trans
+    - cuerpo_y_reproduccion
+    - feminismo_e_igualdad
+    - religion_fe_moralidad
+    - nacion_orden_seguridad
+    - adversarios_politicos
+    - legitimacion
+  theoretical_framework: null
+  language: en
+  languages_supported: [en, es]
+
+temporal:
+  start_date: "2025-01-20"
+  end_date: null
+  cutoff_configurable: true
+
+speaker:
+  name: "Donald J. Trump"
+  role: "President of the United States"
+  attribution_rules:
+    verbatim_speaker: "Remarks pronunciados por el orador; atribuir literalmente"
+    institutional_statement: "Comunicado oficial de la Casa Blanca; atribuir a la institución"
+    signed_document: "Documento firmado; atribuir al firmante"
+    third_party_transcript: "Transcripción de terceros; marcar como third_party y conservar fuente original"
+    contextual_material: "Material contextual; no atribuir como discurso del orador"
+
+sources:
+  - name: white_house_remarks
+    type: website
+    base_url: null
+    document_types:
+      - remarks
+      - speeches
+      - proclamations
+      - executive_orders
+      - messages
+      - press_releases
+    language: en
+    active: true
+    rate_limit_rps: 1.0
+    respect_robots_txt: true
+    user_agent: "VoxiTech Lab AI research (contacto: investigador@example.com)"
+    selectors: {}
+
+dictionaries:
+  - id: genero_familia_en_v1
+    path: config/dictionaries/en/genero_familia_v1.yaml
+    language: en
+    project_id: trump_gender_2025_2026
+
+codebook:
+  id: trump_gender_v1
+  path: config/codebooks/trump_gender_v1.yaml
+  version: "1.0.0"
+  language: en
+  status: draft
+
+segmentation:
+  mode: word_window
+  min_words: 50
+  max_words: 200
+  min_paragraphs: 1
+  max_paragraphs: 3
+  context_window_chars: 300
+
+storage:
+  corpus_format: parquet
+  metadata_db: data/processed/metadata.sqlite
+  raw_root: data/raw
+  interim_root: data/interim
+  processed_root: data/processed
+  outputs_root: outputs
+
+deduplication:
+  keys:
+    - url
+    - content_hash
+    - title_date_speaker
+  strategy: keep_first
+
+quality:
+  min_word_count_document: 100
+  max_boilerplate_ratio: 0.30
+  require_language_detection: true
+  require_date: true
+  blocklist_domains: []
